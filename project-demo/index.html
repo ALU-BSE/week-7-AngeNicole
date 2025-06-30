@@ -8,46 +8,46 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --navy-blue: #1e3a8a;
-            --light-navy: #3b82f6;
-            --yellow: #fbbf24;
-            --dark-yellow: #f59e0b;
+            --yellow: #F1C40F;
+            --dark-grey: #2d3135;
+            --medium-grey: #7F8C8D ;
+            --light-grey: #BDC3C7;
+            --generic-white: #ffffff;
         }
 
         .navbar-custom {
-            background-color: var(--navy-blue) !important;
+            background-color: var(--dark-grey) !important;
         }
 
         .navbar-brand, .navbar-nav .nav-link {
-            color: white !important;
+            color: var(--generic-white) !important;
         }
 
         .navbar-nav .nav-link:hover {
-            color: var(--yellow) !important;
+            color: var(--light-grey) !important;
         }
 
         .hero-section {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--light-navy) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow) 100%);
+            color: var(--dark-grey);
             padding: 100px 0;
         }
 
         .btn-yellow {
-            background-color: var(--yellow);
-            border-color: var(--yellow);
-            color: var(--navy-blue);
+            background-color: var(--medium-grey);
+            color: var(--generic-white);
             font-weight: 600;
         }
 
         .btn-yellow:hover {
-            background-color: var(--dark-yellow);
-            border-color: var(--dark-yellow);
-            color: var(--navy-blue);
+            background-color: var(--light-grey);
+            border-color: var(--light-grey);
+            color: var(--generic-white);
         }
 
         .btn-outline-yellow {
-            border-color: var(--yellow);
-            color: var(--yellow);
+            border-color: var(--dark-grey);
+            color: var(--dark-grey);
             font-weight: 600;
         }
 
@@ -124,7 +124,7 @@
         }
 
         .tech-badge {
-            background-color: var(--navy-blue);
+            background-color: var(--yellow);
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
@@ -155,7 +155,7 @@
         }
 
         .footer {
-            background-color: var(--navy-blue);
+            background-color: var(--dark-grey);
             color: white;
             padding: 40px 0;
         }
@@ -284,33 +284,32 @@
 
                 <!-- What you will Learn -->
                 <div class="col-lg-4">
-  <h2 class="section-title h3">What you will Learn</h2>
-  <div class="table-responsive">
-    <table class="table border border-color-secondary">
-      <tbody>
-        <tr>
-          <td><strong>MongoDB</strong>: NoSQL Database</td>
-        </tr>
-        <tr>
-          <td><strong>Express</strong>: Framework for Node</td>
-        </tr>
-        <tr>
-          <td><strong>React</strong>: JavaScript Library</td>
-        </tr>
-        <tr>
-          <td><strong>Node.js</strong>: JavaScript Environment</td>
-        </tr>
-        <tr>
-          <td><strong>ES2015</strong>: Latest JavaScript Version</td>
-        </tr>
-        <tr>
-          <td><strong>Babel</strong>: JavaScript Compiler</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
+                    <h2 class="section-title h3">What you will Learn</h2>
+                    <div class="table-responsive">
+                        <table class="table border border-color border-radius-2">
+                        <tbody>
+                            <tr>
+                            <td><strong>MongoDB</strong>: NoSQL Database</td>
+                            </tr>
+                            <tr>
+                            <td><strong>Express</strong>: Framework for Node</td>
+                            </tr>
+                            <tr>
+                            <td><strong>React</strong>: JavaScript Library</td>
+                            </tr>
+                            <tr>
+                            <td><strong>Node.js</strong>: JavaScript Environment</td>
+                            </tr>
+                            <tr>
+                            <td><strong>ES2015</strong>: Latest JavaScript Version</td>
+                            </tr>
+                            <tr>
+                            <td><strong>Babel</strong>: JavaScript Compiler</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -320,7 +319,7 @@
         <div class="container">
             <h2 class="text-center section-title">Speakers</h2>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 border-color-secondary">
                     <div class="card speaker-card h-100">
                         <div class="speaker-img">640 × 360</div>
                         <div class="card-body">
@@ -329,7 +328,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 border-color-secondary">
                     <div class="card speaker-card h-100">
                         <div class="speaker-img">640 × 360</div>
                         <div class="card-body">
@@ -338,7 +337,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 border-color-secondary">
                     <div class="card speaker-card h-100">
                         <div class="speaker-img">640 × 360</div>
                         <div class="card-body">
@@ -347,7 +346,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 border-color-secondary">
                     <div class="card speaker-card h-100">
                         <div class="speaker-img">640 × 360</div>
                         <div class="card-body">
@@ -356,7 +355,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 border-color-secondary">
                     <div class="card speaker-card h-100">
                         <div class="speaker-img">640 × 360</div>
                         <div class="card-body">
@@ -365,7 +364,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 border-color-secondary">
                     <div class="card speaker-card h-100">
                         <div class="speaker-img">640 × 360</div>
                         <div class="card-body">
@@ -380,61 +379,77 @@
 
     <!-- Schedule Section -->
     <section id="schedule" class="page-section">
-        <div class="container">
-            <h2 class="text-center section-title">Schedule</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="schedule-item">
-                        <div class="schedule-time">9:00am</div>
-                        <h4 class="schedule-title">Keynote: Internet of Things</h4>
-                        <p class="schedule-speaker">Pelino</p>
-                    </div>
-
-                    <div class="schedule-item">
-                        <div class="schedule-time">10:00am</div>
-                        <h4 class="schedule-title">React Basics</h4>
-                        <p class="schedule-speaker">James</p>
-                    </div>
-
-                    <div class="schedule-item">
-                        <div class="schedule-time">11:00am</div>
-                        <h4 class="schedule-title">Mongo!</h4>
-                        <p class="schedule-speaker">Pelino</p>
-                    </div>
-
-                    <div class="schedule-item lunch-break">
-                        <div class="schedule-time">12:00pm</div>
-                        <h4 class="schedule-title">Lunch</h4>
-                        <p class="schedule-speaker">Free Pizza</p>
-                    </div>
-
-                    <div class="schedule-item">
-                        <div class="schedule-time">2:00pm</div>
-                        <h4 class="schedule-title">Intro: Node.JS</h4>
-                        <p class="schedule-speaker">Pelino</p>
-                    </div>
-
-                    <div class="schedule-item">
-                        <div class="schedule-time">3:00pm</div>
-                        <h4 class="schedule-title">Express</h4>
-                        <p class="schedule-speaker">Pelino</p>
-                    </div>
-
-                    <div class="schedule-item">
-                        <div class="schedule-time">4:00pm</div>
-                        <h4 class="schedule-title">Babel</h4>
-                        <p class="schedule-speaker">Pelino</p>
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <button class="btn btn-yellow btn-lg" data-bs-toggle="modal" data-bs-target="#registrationModal">
-                            Don't Miss out Register Now
-                        </button>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <h2 class="text-center section-title">Schedule</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="table-responsive">
+          <table class="table table-borderless align-middle">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="h5 mb-1">Keynote: Internet of Things</div>
+                  <div class="text-muted">Pelino</div>
+                </td>
+                <td class="text-end fw-bold text-primary">9:00am</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="h5 mb-1">React Basics</div>
+                  <div class="text-muted">James</div>
+                </td>
+                <td class="text-end fw-bold text-primary">10:00am</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="h5 mb-1">Mongo!</div>
+                  <div class="text-muted">Pelino</div>
+                </td>
+                <td class="text-end fw-bold text-primary">11:00am</td>
+              </tr>
+              <tr class="bg-warning">
+                <td>
+                  <div class="h5 mb-1">Lunch</div>
+                  <div class="text-muted">Free Pizza</div>
+                </td>
+                <td class="text-end fw-bold text-primary">12:00pm</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="h5 mb-1">Intro: Node.JS</div>
+                  <div class="text-muted">Pelino</div>
+                </td>
+                <td class="text-end fw-bold text-primary">2:00pm</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="h5 mb-1">Express</div>
+                  <div class="text-muted">Pelino</div>
+                </td>
+                <td class="text-end fw-bold text-primary">3:00pm</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="h5 mb-1">Babel</div>
+                  <div class="text-muted">Pelino</div>
+                </td>
+                <td class="text-end fw-bold text-primary">4:00pm</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </section>
+
+        <div class="text-center mt-5">
+          <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#registrationModal">
+            Don't Miss out Register Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
