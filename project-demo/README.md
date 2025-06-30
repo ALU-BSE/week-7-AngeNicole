@@ -4,12 +4,12 @@ A modern, responsive conference website built with Bootstrap 5, featuring a clea
 
 ## 📋 Project Overview
 
-This project is a complete conference website for "Full Stack Conference 2025" that showcases speakers, schedule, and provides registration functionality. The website is designed to be modern, clean, and fully responsive across all devices.
+This project is a complete conference website for "Full Stack Conf 2025" that showcases speakers, schedule, and provides registration functionality. The website is designed to be modern, clean, and fully responsive across all devices.
 
 ## 🎨 Design Features
 
 - **Modern UI/UX**: Clean, contemporary design with smooth animations and hover effects
-- **Color Scheme**: Navy blue (#1e3a8a) and yellow (#fbbf24) theme
+- **Color Scheme**: Yellow (#f5c842) and Dark Gray (#9c9c9c) theme
 - **Responsive Design**: Optimized for mobile, tablet, and desktop devices
 - **Interactive Elements**: Smooth scrolling, hover animations, and modal dialogs
 - **Professional Layout**: Well-structured sections with proper spacing and typography
@@ -32,16 +32,6 @@ This project is a complete conference website for "Full Stack Conference 2025" t
 - **Mobile**: 320px - 767px
 - **Tablet**: 768px - 1023px
 - **Desktop**: 1024px and above
-
-## 📁 File Structure
-
-```
-fullstack-conference/
-│
-├── index.html          # Main HTML file
-├── README.md          # Project documentation
-└── screenshots/       # Demo screenshots (optional)
-```
 
 ## 🎯 Key Features
 
@@ -78,20 +68,23 @@ fullstack-conference/
 - Copyright information
 - Responsive column layout
 
+## Screenshots
+
+![image](https://github.com/user-attachments/assets/3c0731c6-1414-4293-9afa-7513db226fe7)
+![image](https://github.com/user-attachments/assets/d75bc4fa-5faf-4eef-b4dc-0b87735a6b6c)
+![image](https://github.com/user-attachments/assets/ab01563c-6235-4156-a823-b75a3033998e)
+![image](https://github.com/user-attachments/assets/34bb3bf7-ca85-493a-99ad-1ac5fffb63eb)
+![image](https://github.com/user-attachments/assets/6053eca4-eea5-4ef8-91e4-109d702f4973)
+
+
 ## 🎨 Color Palette
 
 ```css
---navy-blue: #1e3a8a     /* Primary brand color */
---light-navy: #3b82f6    /* Secondary blue */
---yellow: #fbbf24        /* Accent color */
---dark-yellow: #f59e0b   /* Hover states */
+--yellow: #f5c842;
+--light-navy: #f4c430;
+--dark-gray: #9c9c9c;
+--dark-yellow: #3d3d3d;
 ```
-
-## 📱 Responsive Breakpoints
-
-- **Small devices** (phones): < 768px
-- **Medium devices** (tablets): 768px - 1024px
-- **Large devices** (desktops): > 1024px
 
 ## 🚀 Quick Start
 
@@ -110,18 +103,6 @@ python -m http.server 8000
 ```
 
 ## 🔧 Customization
-
-### Colors
-To change the color scheme, modify the CSS custom properties in the `<style>` section:
-
-```css
-:root {
-    --navy-blue: #1e3a8a;      /* Change primary color */
-    --light-navy: #3b82f6;     /* Change secondary color */
-    --yellow: #fbbf24;         /* Change accent color */
-    --dark-yellow: #f59e0b;    /* Change hover color */
-}
-```
 
 ### Content
 - **Speaker Information**: Update speaker cards in the "Speakers" section
@@ -158,14 +139,6 @@ To change the color scheme, modify the CSS custom properties in the `<style>` se
 - **Buttons**: Various button styles and states
 - **Grid System**: Responsive layout structure
 - **Utilities**: Spacing, colors, and typography
-
-## 🎯 SEO Optimization
-
-- **Meta Tags**: Proper viewport and character encoding
-- **Semantic Structure**: HTML5 semantic elements
-- **Heading Hierarchy**: Proper H1-H6 structure
-- **Alt Text Ready**: Image placeholders for alt attributes
-- **Schema Markup Ready**: Structure ready for JSON-LD
 
 ## 🧪 Testing Checklist
 
