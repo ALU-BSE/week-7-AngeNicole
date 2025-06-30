@@ -1,635 +1,898 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Conference 2025</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --yellow: #F1C40F;
-            --dark-grey: #2d3135;
-            --medium-grey: #7F8C8D ;
-            --light-grey: #BDC3C7;
-            --generic-white: #ffffff;
-        }
-
-        .navbar-custom {
-            background-color: var(--dark-grey) !important;
-        }
-
-        .navbar-brand, .navbar-nav .nav-link {
-            color: var(--generic-white) !important;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--light-grey) !important;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow) 100%);
-            color: var(--dark-grey);
-            padding: 100px 0;
-        }
-
-        .btn-yellow {
-            background-color: var(--medium-grey);
-            color: var(--generic-white);
-            font-weight: 600;
-        }
-
-        .btn-yellow:hover {
-            background-color: var(--light-grey);
-            border-color: var(--light-grey);
-            color: var(--generic-white);
-        }
-
-        .btn-outline-yellow {
-            border-color: var(--dark-grey);
-            color: var(--dark-grey);
-            font-weight: 600;
-        }
-
-        .btn-outline-yellow:hover {
-            background-color: var(--yellow);
-            color: var(--navy-blue);
-        }
-
-        .section-title {
-            color: var(--navy-blue);
-            font-weight: 700;
-            margin-bottom: 3rem;
-        }
-
-        .speaker-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
-
-        .speaker-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2);
-        }
-
-        .speaker-img {
-            width: 100%;
-            height: 250px;
-            background-color: #e5e7eb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-size: 1.2rem;
-        }
-
-        .schedule-item {
-            border-left: 4px solid var(--yellow);
-            padding-left: 20px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .schedule-time {
-            background-color: var(--yellow);
-            color: var(--navy-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-
-        .schedule-title {
-            color: var(--navy-blue);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .schedule-speaker {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .lunch-break {
-            background-color: #f8fafc;
-            border-radius: 10px;
-            padding: 20px;
-            border-left: 4px solid var(--navy-blue);
-        }
-
-        .tech-badge {
-            background-color: var(--yellow);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin: 5px;
-            display: inline-block;
-        }
-
-        .registration-modal .modal-content {
-            border-radius: 15px;
-            border: none;
-        }
-
-        .modal-header {
-            background-color: var(--yellow);
-            color: var(--navy-blue);
-            border-radius: 15px 15px 0 0 !important;
-        }
-
-        .form-control:focus {
-            border-color: var(--yellow);
-            box-shadow: 0 0 0 0.2rem rgba(251, 191, 36, 0.25);
-        }
-
-        .form-select:focus {
-            border-color: var(--yellow);
-            box-shadow: 0 0 0 0.2rem rgba(251, 191, 36, 0.25);
-        }
-
-        .footer {
-            background-color: var(--dark-grey);
-            color: white;
-            padding: 40px 0;
-        }
-
-        .footer a {
-            color: var(--yellow);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: var(--dark-yellow);
-        }
-
-        .conference-image {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .alert-warning {
-            background-color: #fef3c7;
-            border-color: var(--yellow);
-            color: var(--navy-blue);
-            border-radius: 10px;
-        }
-
-        .page-section {
-            padding: 80px 0;
-        }
-
-        .page-header {
-            background-color: var(--navy-blue);
-            color: white;
-            padding: 60px 0;
-            margin-bottom: 50px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 0;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Stack Conference 2025</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --yellow: #f5c842;
+                --light-navy: #f4c430;
+                --dark-gray: #9c9c9c;
+                --dark-yellow: #3d3d3d;
             }
-            
+
+            .navbar-custom {
+                background-color: #19232d !important;
+            }
+
+            .navbar-brand,
+            .navbar-nav .nav-link {
+                color: white !important;
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: var(--dark-gray) !important;
+            }
+
+            .hero-section {
+                background: linear-gradient(
+                    135deg,
+                    var(--yellow) 0%,
+                    var(--light-navy) 100%
+                );
+                color: white;
+                padding: 100px 0;
+            }
+
+            .btn-yellow {
+                background-color: var(--dark-gray);
+                border-color: var(--dark-gray);
+                color: var(--yellow);
+                font-weight: 600;
+            }
+
+            .btn-yellow:hover {
+                background-color: var(--dark-yellow);
+                border-color: var(--dark-yellow);
+                color: var(--yellow);
+            }
+
+            .btn-outline-yellow {
+                border-color: var(--dark-gray);
+                color: var(--dark-gray);
+                font-weight: 600;
+            }
+
+            .btn-outline-yellow:hover {
+                background-color: var(--dark-gray);
+                color: var(--yellow);
+            }
+
+            .section-title {
+                color: var(--yellow);
+                font-weight: 700;
+                margin-bottom: 3rem;
+            }
+
+            .speaker-card {
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                overflow: hidden;
+            }
+
+            .speaker-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2);
+            }
+
+            .speaker-img {
+                width: 100%;
+                height: 250px;
+                background-color: #e5e7eb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #9ca3af;
+                font-size: 1.2rem;
+            }
+            .schedules {
+                border: 1px solid rgba(201, 201, 201, 0.561);
+                border-radius: 10px;
+                padding: 0;
+            }
+            .schedule-card {
+                border-bottom: 1px solid rgb(201, 201, 201);
+                padding: 20px;
+            }
+            .schedule-card:hover {
+                cursor: pointer;
+                background-color: #62626237;
+            }
             .schedule-time {
-                position: static;
-                margin-bottom: 10px;
+                background-color: var(--yellow);
+                color: var(--dark-yellow);
+                border-radius: 50px;
+                padding: 2px 10px;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            .schedule-title {
+                color: #000;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .schedule-speaker {
+                color: #6b7280;
+                font-size: 0.9rem;
+            }
+
+            .lunch-break {
+                background-color: #62626237;
+            }
+
+            .tech-badge {
+                background-color: var(--yellow);
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                margin: 5px;
                 display: inline-block;
             }
-            
-            .speaker-img {
-                height: 200px;
+
+            .registration-modal .modal-content {
+                border-radius: 15px;
+                border: none;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-        <div class="container">
-            <!-- <a class="navbar-brand fw-bold" href="#home">
+
+            .modal-header {
+                background-color: var(--yellow);
+                color: var(--yellow);
+                border-radius: 15px 15px 0 0 !important;
+            }
+
+            .form-control:focus {
+                border-color: var(--dark-gray);
+                box-shadow: 0 0 0 0.2rem rgba(251, 191, 36, 0.25);
+            }
+
+            .form-select:focus {
+                border-color: var(--dark-gray);
+                box-shadow: 0 0 0 0.2rem rgba(251, 191, 36, 0.25);
+            }
+
+            .footer {
+                color: gray;
+                padding: 40px 0;
+            }
+
+            .footer a {
+                color: var(--dark-gray);
+                text-decoration: none;
+            }
+
+            .footer a:hover {
+                color: var(--dark-yellow);
+            }
+
+            .conference-image {
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .alert-warning {
+                background-color: #fef3c7;
+                color: var(--yellow);
+                border-radius: 10px;
+            }
+
+            .page-section {
+                padding: 80px 0;
+            }
+
+            .page-header {
+                background-color: var(--yellow);
+                color: white;
+                padding: 60px 0;
+                margin-bottom: 50px;
+            }
+
+            /* buttons */
+            .btn {
+                border-radius: 0px;
+            }
+            .btn-black {
+                background-color: #000;
+                color: #fff;
+            }
+            .btn-outline-secondary:hover{
+                background-color: var(--yellow);
+                color: white;
+            }
+
+            @media (max-width: 768px) {
+                .hero-section {
+                    padding: 60px 0;
+                }
+
+                .schedule-time {
+                    position: static;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                }
+
+                .speaker-img {
+                    height: 200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+            <div class="container">
+                <!-- <a class="navbar-brand fw-bold" href="#home">
                 <i class="fas fa-code me-2"></i>Full Stack Conf
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#speakers">Speakers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#schedule">Schedule</a>
-                    </li>
-                </ul>
-                <span class="navbar-text" style="color: white;">
-                    Powered By <strong style="color: var(--yellow);">PARAGRAPH</strong>
-                </span>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#speakers">Speakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#schedule">Schedule</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text" style="color: white">
+                        Powered By <span class="text-warning">PARAGRAPH</span>
+                    </span>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center">
-                    <h1 class="display-4 fw-bold mb-4">Full Stack Conf 2025</h1>
-                    <p class="lead mb-4">A one-day conference about all things Javascript.</p>
-                    <div class="d-flex gap-3 flex-wrap justify-content-center">
-                        <button class="btn btn-yellow btn-lg" data-bs-toggle="modal" data-bs-target="#registrationModal">
-                            <i class="fas fa-ticket-alt me-2"></i>Register Now
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="display-4 fw-bold mb-4 text-black">
+                            Full Stack Conf
+                        </h1>
+                        <p class="lead mb-4 text-black">
+                            A one-day conference about all things Javascript.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <button
+                                class="btn btn-secondary btn-lg text-white rounded-start"
+                            data-bs-toggle="modal"
+                            data-bs-target="#registrationModal"
+                            >
+                                Register Now
+                            </button>
+                            <a
+                                href="#speakers"
+                                class="btn btn-dark btn-lg text-white rounded-end"
+                            >
+                                See Speakers
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="page-section">
+            <div class="container">
+                <div class="row g-5">
+                    <!-- Expert Speakers -->
+                    <div class="col-lg-4">
+                        <h2 class="section-title h3 text-black">
+                            Expert Speakers
+                        </h2>
+                        <p class="mb-4">
+                            Learn from industry leaders and experienced
+                            developers who will share their knowledge on the
+                            latest full-stack technologies and best practices.
+                        </p>
+                        <p class="mb-4">
+                            Our speakers come from top tech companies and have
+                            years of experience building scalable web
+                            applications using modern frameworks and tools.
+                        </p>
+                        <p>
+                            Get insights into real-world development challenges
+                            and discover innovative solutions that you can apply
+                            to your own projects immediately.
+                        </p>
+                    </div>
+
+                    <!-- About Full Stack Conf -->
+                    <div class="col-lg-4" id="about">
+                        <h2 class="section-title h3 text-black">
+                            About Full Stack Conf
+                        </h2>
+                        <img
+                            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600"
+                            alt="Conference venue"
+                            class="img-fluid conference-image mb-3"
+                        />
+                        <p class="mb-4">
+                            Join developers from around the world for an
+                            intensive day of learning about full-stack
+                            development. From frontend frameworks to backend
+                            services, we cover it all.
+                        </p>
+                        <p>
+                            Experience hands-on workshops, networking
+                            opportunities, and gain practical knowledge that
+                            will accelerate your development career and keep you
+                            ahead of industry trends.
+                        </p>
+                    </div>
+
+                    <!-- What you will Learn -->
+                    <div class="col-lg-4">
+                        <h2 class="section-title h3 text-black">
+                            What you will Learn
+                        </h2>
+                        <div class="table-responsive">
+                            <table
+                                class="table border border-color border-radius-2"
+                            >
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>MongoDB</strong>: NoSQL
+                                            Database
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Express</strong>: Framework
+                                            for Node
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>React</strong>: JavaScript
+                                            Library
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Node.js</strong>: JavaScript
+                                            Environment
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>ES2015</strong>: Latest
+                                            JavaScript Version
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Babel</strong>: JavaScript
+                                            Compiler
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Speakers Section -->
+        <section id="speakers" class="page-section">
+            <div class="container">
+                <h2 class="text-center section-title text-secondary">
+                    Speakers
+                </h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 border-color-secondary">
+                        <div class="card speaker-card h-100">
+                            <div class="speaker-img">640 × 360</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pelino</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text
+                                    below as a natural lead-in to additional
+                                    content. This content is a little bit
+                                    longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 border-color-secondary">
+                        <div class="card speaker-card h-100">
+                            <div class="speaker-img">640 × 360</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pelino</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text
+                                    below as a natural lead-in to additional
+                                    content. This content is a little bit
+                                    longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 border-color-secondary">
+                        <div class="card speaker-card h-100">
+                            <div class="speaker-img">640 × 360</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pelino</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text
+                                    below as a natural lead-in to additional
+                                    content. This content is a little bit
+                                    longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 border-color-secondary">
+                        <div class="card speaker-card h-100">
+                            <div class="speaker-img">640 × 360</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pelino</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text
+                                    below as a natural lead-in to additional
+                                    content. This content is a little bit
+                                    longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 border-color-secondary">
+                        <div class="card speaker-card h-100">
+                            <div class="speaker-img">640 × 360</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pelino</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text
+                                    below as a natural lead-in to additional
+                                    content. This content is a little bit
+                                    longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 border-color-secondary">
+                        <div class="card speaker-card h-100">
+                            <div class="speaker-img">640 × 360</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pelino</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text
+                                    below as a natural lead-in to additional
+                                    content. This content is a little bit
+                                    longer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="page-section">
+            <div class="container">
+                <h2 class="text-center section-title text-secondary">
+                    Schedule
+                </h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 schedules">
+                        <div class="schedule-card">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">
+                                    Keynote: Internet of Things
+                                </h4>
+                                <div class="schedule-time">9:00am</div>
+                            </div>
+                            <p class="schedule-speaker">Pelino</p>
+                        </div>
+
+                        <div class="schedule-card">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">React Basics</h4>
+                                <div class="schedule-time">10:00am</div>
+                            </div>
+                            <p class="schedule-speaker">James</p>
+                        </div>
+
+                        <div class="schedule-card">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">Mongo!</h4>
+                                <div class="schedule-time">11:00am</div>
+                            </div>
+                            <p class="schedule-speaker">Pelino</p>
+                        </div>
+
+                        <div class="schedule-card lunch-break">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">Lunch</h4>
+                                <div class="schedule-time">12:00pm</div>
+                            </div>
+                            <p class="schedule-speaker">Free Pizza</p>
+                        </div>
+
+                        <div class="schedule-card">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">Intro: Node.JS</h4>
+                                <div class="schedule-time">2:00pm</div>
+                            </div>
+                            <p class="schedule-speaker">Pelino</p>
+                        </div>
+
+                        <div class="schedule-card">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">Express</h4>
+                                <div class="schedule-time">3:00pm</div>
+                            </div>
+                            <p class="schedule-speaker">Pelino</p>
+                        </div>
+
+                        <div class="schedule-card">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <h4 class="schedule-title">Babel</h4>
+                                <div class="schedule-time">4:00pm</div>
+                            </div>
+                            <p class="schedule-speaker">Pelino</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <button
+                            class="btn rounded btn-outline-secondary btn-lg text-secondary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#registrationModal"
+                        >
+                            Don't Miss out Register Now
                         </button>
-                        <a href="#speakers" class="btn btn-outline-yellow btn-lg">
-                            <i class="fas fa-users me-2"></i>See Speakers
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Main Content -->
-    <main class="page-section">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Expert Speakers -->
-                <div class="col-lg-4">
-                    <h2 class="section-title h3">Expert Speakers</h2>
-                    <p class="mb-4">Learn from industry leaders and experienced developers who will share their knowledge on the latest full-stack technologies and best practices.</p>
-                    <p class="mb-4">Our speakers come from top tech companies and have years of experience building scalable web applications using modern frameworks and tools.</p>
-                    <p>Get insights into real-world development challenges and discover innovative solutions that you can apply to your own projects immediately.</p>
-                </div>
-
-                <!-- About Full Stack Conf -->
-                <div class="col-lg-4" id="about">
-                    <h2 class="section-title h3">About Full Stack Conf</h2>
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" 
-                         alt="Conference venue" class="img-fluid conference-image mb-3">
-                    <p class="mb-4">Join developers from around the world for an intensive day of learning about full-stack development. From frontend frameworks to backend services, we cover it all.</p>
-                    <p>Experience hands-on workshops, networking opportunities, and gain practical knowledge that will accelerate your development career and keep you ahead of industry trends.</p>
-                </div>
-
-                <!-- What you will Learn -->
-                <div class="col-lg-4">
-                    <h2 class="section-title h3">What you will Learn</h2>
-                    <div class="table-responsive">
-                        <table class="table border border-color border-radius-2">
-                        <tbody>
-                            <tr>
-                            <td><strong>MongoDB</strong>: NoSQL Database</td>
-                            </tr>
-                            <tr>
-                            <td><strong>Express</strong>: Framework for Node</td>
-                            </tr>
-                            <tr>
-                            <td><strong>React</strong>: JavaScript Library</td>
-                            </tr>
-                            <tr>
-                            <td><strong>Node.js</strong>: JavaScript Environment</td>
-                            </tr>
-                            <tr>
-                            <td><strong>ES2015</strong>: Latest JavaScript Version</td>
-                            </tr>
-                            <tr>
-                            <td><strong>Babel</strong>: JavaScript Compiler</td>
-                            </tr>
-                        </tbody>
-                        </table>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>About Paragraph</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            accusam et justo duo dolores et ea rebum.
+                        </p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Speakers Section -->
-    <section id="speakers" class="page-section bg-light">
-        <div class="container">
-            <h2 class="text-center section-title">Speakers</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 border-color-secondary">
-                    <div class="card speaker-card h-100">
-                        <div class="speaker-img">640 × 360</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pelino</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="col-md-6">
+                        <h5>Stay up to date on Paragraph Conference</h5>
+                        <div class="input-group mt-3">
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                            />
+                            <button class="btn btn-secondary" type="button">
+                                Sign up
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 border-color-secondary">
-                    <div class="card speaker-card h-100">
-                        <div class="speaker-img">640 × 360</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pelino</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 border-color-secondary">
-                    <div class="card speaker-card h-100">
-                        <div class="speaker-img">640 × 360</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pelino</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 border-color-secondary">
-                    <div class="card speaker-card h-100">
-                        <div class="speaker-img">640 × 360</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pelino</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 border-color-secondary">
-                    <div class="card speaker-card h-100">
-                        <div class="speaker-img">640 × 360</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pelino</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 border-color-secondary">
-                    <div class="card speaker-card h-100">
-                        <div class="speaker-img">640 × 360</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pelino</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="page-section">
-  <div class="container">
-    <h2 class="text-center section-title">Schedule</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="table-responsive">
-          <table class="table table-borderless align-middle">
-            <tbody>
-              <tr>
-                <td>
-                  <div class="h5 mb-1">Keynote: Internet of Things</div>
-                  <div class="text-muted">Pelino</div>
-                </td>
-                <td class="text-end fw-bold text-primary">9:00am</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="h5 mb-1">React Basics</div>
-                  <div class="text-muted">James</div>
-                </td>
-                <td class="text-end fw-bold text-primary">10:00am</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="h5 mb-1">Mongo!</div>
-                  <div class="text-muted">Pelino</div>
-                </td>
-                <td class="text-end fw-bold text-primary">11:00am</td>
-              </tr>
-              <tr class="bg-warning">
-                <td>
-                  <div class="h5 mb-1">Lunch</div>
-                  <div class="text-muted">Free Pizza</div>
-                </td>
-                <td class="text-end fw-bold text-primary">12:00pm</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="h5 mb-1">Intro: Node.JS</div>
-                  <div class="text-muted">Pelino</div>
-                </td>
-                <td class="text-end fw-bold text-primary">2:00pm</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="h5 mb-1">Express</div>
-                  <div class="text-muted">Pelino</div>
-                </td>
-                <td class="text-end fw-bold text-primary">3:00pm</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="h5 mb-1">Babel</div>
-                  <div class="text-muted">Pelino</div>
-                </td>
-                <td class="text-end fw-bold text-primary">4:00pm</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="text-center mt-5">
-          <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#registrationModal">
-            Don't Miss out Register Now
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>About Paragraph</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing accusam et justo duo dolores et ea rebum.</p>
-                </div>
-                <div class="col-md-6">
-                    <h5>Stay up to date on Paragraph Conference</h5>
-                    <div class="input-group mt-3">
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                        <button class="btn btn-yellow" type="button">Sign up</button>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="d-flex gap-3">
-                        <a href="#">Community</a>
-                        <a href="#">Tracks</a>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Other Confs</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Conference 1</a></li>
-                                <li><a class="dropdown-item" href="#">Conference 2</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">© 2018 Full Stack Conf & Paragraph</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Registration Modal -->
-    <div class="modal fade registration-modal" id="registrationModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">Register for Conference</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-warning" role="alert">
-                        <i class="fas fa-clock me-2"></i>
-                        <strong>Hurry!</strong> Early bird registration ends in two days.
-                        <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
-                    </div>
-
-                    <form>
-                        <div class="mb-4">
-                            <h6 class="fw-bold mb-3">Basic Info.</h6>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="name" class="form-label">Name:</label>
-                                    <input type="text" class="form-control" id="name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">Email:</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="col-12">
-                                    <label for="jobRole" class="form-label">Job Role:</label>
-                                    <select class="form-select" id="jobRole">
-                                        <option selected>Full Stack JS Developer</option>
-                                        <option>Frontend Developer</option>
-                                        <option>Backend Developer</option>
-                                        <option>DevOps Engineer</option>
-                                        <option>UI/UX Designer</option>
-                                    </select>
-                                </div>
+                <hr class="my-4" />
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="d-flex gap-3">
+                            <a href="#">Community</a>
+                            <a href="#">Tracks</a>
+                            <div class="dropdown">
+                                <a
+                                    href="#"
+                                    class="dropdown-toggle border p-2"
+                                    data-bs-toggle="dropdown"
+                                    >Other Confs</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                            >Conference 1</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                            >Conference 2</a
+                                        >
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0">© 2018 Full Stack Conf & Paragraph</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-                        <div class="mb-4">
-                            <h6 class="fw-bold mb-3">Which Topics Interest You Most?</h6>
-                            <div class="row g-2">
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="jsFrameworks">
-                                        <label class="form-check-label" for="jsFrameworks">
-                                            JavaScript Frameworks
-                                        </label>
+        <!-- Registration Modal -->
+        <div
+            class="modal fade registration-modal"
+            id="registrationModal"
+            tabindex="-1"
+        >
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-black">
+                            Register for Conference
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning" role="alert">
+                            <i class="fas fa-clock me-2"></i>
+                            <strong>Hurry!</strong> Early bird registration ends
+                            in two days.
+                            <button
+                                type="button"
+                                class="btn-close float-end"
+                                data-bs-dismiss="alert"
+                            ></button>
+                        </div>
+
+                        <form>
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-3">Basic Info.</h6>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label"
+                                            >Name:</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="name"
+                                            required
+                                        />
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="jsLibraries">
-                                        <label class="form-check-label" for="jsLibraries">
-                                            JavaScript Libraries
-                                        </label>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label"
+                                            >Email:</label
+                                        >
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            id="email"
+                                            required
+                                        />
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="nodejs">
-                                        <label class="form-check-label" for="nodejs">
-                                            Node.js
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="buildTools">
-                                        <label class="form-check-label" for="buildTools">
-                                            Build Tools
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="es2015">
-                                        <label class="form-check-label" for="es2015">
-                                            ES2015
-                                        </label>
+                                    <div class="col-12">
+                                        <label for="jobRole" class="form-label"
+                                            >Job Role:</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="jobRole"
+                                        >
+                                            <option selected>
+                                                Full Stack JS Developer
+                                            </option>
+                                            <option>Frontend Developer</option>
+                                            <option>Backend Developer</option>
+                                            <option>DevOps Engineer</option>
+                                            <option>UI/UX Designer</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="mb-4">
-                            <h6 class="fw-bold mb-3">Payment Info.</h6>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="cardNumber" class="form-label">Card Number:</label>
-                                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="zipCode" class="form-label">Zip Code:</label>
-                                    <input type="text" class="form-control" id="zipCode">
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="cvv" class="form-label">CVV:</label>
-                                    <input type="text" class="form-control" id="cvv">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="expMonth" class="form-label">Expiration Date:</label>
-                                    <select class="form-select" id="expMonth">
-                                        <option>1 - January</option>
-                                        <option>2 - February</option>
-                                        <option>3 - March</option>
-                                        <option>4 - April</option>
-                                        <option>5 - May</option>
-                                        <option>6 - June</option>
-                                        <option>7 - July</option>
-                                        <option>8 - August</option>
-                                        <option>9 - September</option>
-                                        <option>10 - October</option>
-                                        <option>11 - November</option>
-                                        <option>12 - December</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="expYear" class="form-label">&nbsp;</label>
-                                    <select class="form-select" id="expYear">
-                                        <option>2024</option>
-                                        <option>2025</option>
-                                        <option>2026</option>
-                                        <option>2027</option>
-                                        <option>2028</option>
-                                        <option>2029</option>
-                                    </select>
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-3">
+                                    Which Topics Interest You Most?
+                                </h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="jsFrameworks"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="jsFrameworks"
+                                            >
+                                                JavaScript Frameworks
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="jsLibraries"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="jsLibraries"
+                                            >
+                                                JavaScript Libraries
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="nodejs"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="nodejs"
+                                            >
+                                                Node.js
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="buildTools"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="buildTools"
+                                            >
+                                                Build Tools
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="es2015"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="es2015"
+                                            >
+                                                ES2015
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <button type="submit" class="btn btn-dark btn-lg">
-                            <i class="fas fa-ticket-alt me-2"></i>Register
-                        </button>
-                    </form>
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-3">Payment Info.</h6>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label
+                                            for="cardNumber"
+                                            class="form-label"
+                                            >Card Number:</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="cardNumber"
+                                            placeholder="1234 5678 9012 3456"
+                                        />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="zipCode" class="form-label"
+                                            >Zip Code:</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="zipCode"
+                                        />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="cvv" class="form-label"
+                                            >CVV:</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="cvv"
+                                        />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="expMonth" class="form-label"
+                                            >Expiration Date:</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="expMonth"
+                                        >
+                                            <option>1 - January</option>
+                                            <option>2 - February</option>
+                                            <option>3 - March</option>
+                                            <option>4 - April</option>
+                                            <option>5 - May</option>
+                                            <option>6 - June</option>
+                                            <option>7 - July</option>
+                                            <option>8 - August</option>
+                                            <option>9 - September</option>
+                                            <option>10 - October</option>
+                                            <option>11 - November</option>
+                                            <option>12 - December</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="expYear" class="form-label"
+                                            >&nbsp;</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            id="expYear"
+                                        >
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                            <option>2027</option>
+                                            <option>2028</option>
+                                            <option>2029</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-dark btn-lg rounded"
+                            >
+                                Register
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
